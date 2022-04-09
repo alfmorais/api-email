@@ -10,5 +10,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: build-project
       run: |
-        make install-requirements
+        make build
+    - uses: actions/tests
+    - name: test
+      run: |
         make test
