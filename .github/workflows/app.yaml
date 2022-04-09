@@ -1,0 +1,14 @@
+name: api-email
+
+on: [pull_request, push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: build-project
+      run: |
+        make install-requirements
+        make test

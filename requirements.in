@@ -1,0 +1,13 @@
+blue==0.7.0
+fastapi
+fastapi-mail
+pip-compile-multi
+pre-commit
+prospector==1.6.0
+psycopg2-binary
+pytest
+pytest-vcr
+python-decouple==3.6
+sqlalchemy
+tqdm
+uvicorn
