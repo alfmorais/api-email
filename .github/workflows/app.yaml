@@ -6,9 +6,18 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v2
-    - name: build-project
-      run: |
+
+    - name: Build the Docker image
+      run:
+        make build
+
+    - name: install-requirements
+      run:
         make install-requirements
+
+    - name: Tests
+      run:
         make test
