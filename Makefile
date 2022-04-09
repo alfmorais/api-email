@@ -9,7 +9,7 @@ check-pep257:
 	@prospector --with-tool pep257
 
 create-requirements:
-	@pip-compile requirements.txt
+	@pip-compile requirements.in
 
 freeze:
 	@pip freeze
@@ -30,4 +30,7 @@ test:
 
 update-requirements:
 	@rm requirements.txt
-	@pip-compile requirements.txt
+	@pip-compile requirements.in
+
+run:
+	@docker-compose up

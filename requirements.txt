@@ -8,6 +8,8 @@ aioredis==2.0.1
     # via fastapi-mail
 aiosmtplib==1.1.6
     # via fastapi-mail
+alembic==1.4.2
+    # via -r requirements.in
 anyio==3.5.0
     # via
     #   httpcore
@@ -100,8 +102,12 @@ jinja2==3.1.1
     # via fastapi-mail
 lazy-object-proxy==1.7.1
     # via astroid
+mako==1.2.0
+    # via alembic
 markupsafe==2.1.1
-    # via jinja2
+    # via
+    #   jinja2
+    #   mako
 mccabe==0.6.1
     # via
     #   flake8
@@ -183,8 +189,12 @@ pytest==7.1.1
     #   pytest-vcr
 pytest-vcr==1.0.2
     # via -r requirements.in
+python-dateutil==2.8.2
+    # via alembic
 python-decouple==3.6
     # via -r requirements.in
+python-editor==1.0.4
+    # via alembic
 python-multipart==0.0.5
     # via fastapi-mail
 pyyaml==6.0
@@ -205,6 +215,7 @@ setoptconf-tmp==0.3.1
 six==1.16.0
     # via
     #   fakeredis
+    #   python-dateutil
     #   python-multipart
     #   vcrpy
     #   virtualenv
@@ -218,7 +229,9 @@ snowballstemmer==2.2.0
 sortedcontainers==2.4.0
     # via fakeredis
 sqlalchemy==1.4.35
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   alembic
 starlette==0.17.1
     # via fastapi
 toml==0.10.2

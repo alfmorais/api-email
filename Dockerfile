@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM tiangolo/uvicorn-gunicorn:python3.8
 
 WORKDIR /api-email/
 
@@ -15,9 +15,11 @@ RUN pip install --upgrade pip
 
 RUN apt-get clean && apt-get autoremove
 
-RUN ls -a
-
-RUN pip freeze > requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /api-email/src/
+RUN cat requirements.txt
+
+COPY . /api-email/
+
+CMD ["uvicorn", "emailapi.server:app", "--host", "0.0.0.0", "--port", "8000"]
